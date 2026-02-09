@@ -1,0 +1,101 @@
+kindly create the link by using this code and host it <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramadan Surprise Wish</title>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0d1b2a, #1b263b, #415a77);
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+    min-height: 100vh;
+    transition: all 0.6s ease-in-out;
+  }
+  .container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    display: inline-block;
+  }
+  input {
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    width: 70%;
+    margin-top: 20px;
+  }
+  button {
+    padding: 12px 25px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #f9d342;
+    color: #0d1b2a;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  button:hover {
+    background-color: #ffdd57;
+    transform: scale(1.1);
+  }
+  .message {
+    margin-top: 40px;
+    font-size: 20px;
+    line-height: 1.8;
+    display: none;
+    animation: fadeIn 2s ease forwards;
+  }
+  @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  h1 {
+    color: #f9d342;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🌙 رمضان مفاجأة 🌙</h1>
+  <p>Enter your name below to receive a special Ramadan wish!</p>
+  <input type="text" id="nameInput" placeholder="اكتب اسمك هنا / Type your name">
+  <br>
+  <button id="wishBtn" disabled onclick="showMessage()">Get Wish</button>
+
+  <div class="message" id="message"></div>
+</div>
+
+<script>
+  const nameInput = document.getElementById('nameInput');
+  const wishBtn = document.getElementById('wishBtn');
+  const message = document.getElementById('message');
+
+  nameInput.addEventListener('input', () => {
+    wishBtn.disabled = nameInput.value.trim() === '';
+  });
+
+  function showMessage() {
+    const name = nameInput.value.trim();
+    message.innerHTML = `<h2>🌙 رمضان مبارك يا ${name}! 🌙</h2>
+    <p>May this blessed month of Ramadan bring you peace, mercy, and endless blessings.<br>
+    May your fasting be accepted, your prayers answered, and your heart filled with faith and gratitude.<br>
+    Wishing you and your family a joyful and spiritually uplifting Ramadan.</p>
+    <p>نسأل الله أن يجعل شهر رمضان شهر خيرٍ وبركةٍ عليكم،<br>
+    وأن يتقبل صيامكم وقيامكم، ويملأ قلوبكم طمأنينةً وإيمانًا.<br>
+    رمضان مبارك لكم ولعائلاتكم، وكل عام وأنتم بخير.</p>`;
+    message.style.display = "block";
+    nameInput.style.display = "none";
+    wishBtn.style.display = "none";
+  }
+</script>
+
+</body>
+</html>
